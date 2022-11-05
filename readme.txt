@@ -1,5 +1,21 @@
+# unzip folder 
+unzip zipfile -d extract_path
+unzip /workspace/Odoo/odoo_data.zip -d /workspace/Odoo/odoo_data
+unzip /workspace/Odoo/db_data.zip -d /workspace/Odoo/db_data
+
+
 # Run docker compose
 docker compose up
+
+
+# get container id 
+odoo_id=`docker ps -qf name=odoo-web-1`
+db_id=`docker ps -qf name=odoo-mydb-1`
+
+#Copy files from host to container 
+docker cp /workspace/Odoo/db_data $odoo_id:/var/lib/odoo
+docker cp /workspace/Odoo/odoo_data $db_id:/var/lib/postgresql/data/pgdata
+
 
 
 # Shutdown docker containers
