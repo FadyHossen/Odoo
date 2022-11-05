@@ -8,7 +8,7 @@ services:
       - "8069:8069"
     volumes:
       - /workspace/Odoo/odoo_v/odoo:/var/lib/odoo
-      - ./addons:/mnt/extra-addons
+      - ./extra-addons:/mnt/extra-addons
     environment:
     - HOST=mydb
     - USER=odoo
