@@ -26,6 +26,12 @@ docker compose down
 docker exec -t your-db-container pg_dumpall -c -U your-db-user > dump_$(date +%Y-%m-%d_%H_%M_%S).sql
 docker exec -t $db_id pg_dumpall -c -U odoo > dump_$(date +%Y-%m-%d_%H_%M_%S).sql
 
+docker cp $odoo_id:/var/lib/odoo /workspace/Odoo/odoo_data 
+docker cp $db_id:/var/lib/postgresql/data/pgdata /workspace/Odoo/db_data
+
+## zip folder 
+ zip -r db_data.zip /workspace/Odoo/db_data
+ zip -r odoo_data.zip /workspace/Odoo/odoo_data
 
 # Restore backup
 
