@@ -4,6 +4,7 @@
 unzip zipfile -d extract_path
 unzip -o /workspace/Odoo/odoo_data.zip -d /
 unzip -o /workspace/Odoo/db_data.zip -d /
+unzip -o  /workspace/Odoo/addons_data.zip -d /
 
 mkdir odoo_v
 mkdir db_v
