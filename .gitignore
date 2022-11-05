@@ -1,7 +1,8 @@
 /db_data/*
 /odoo_data/*
 /addons/*
-
+/db_v/*
+/odoo_v/*
 # exception
 !/db_data/.gitkeep
 !/odoo_data/.gitkeep
