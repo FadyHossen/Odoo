@@ -24,6 +24,7 @@ docker compose down
 
 # Take backup
 docker exec -t your-db-container pg_dumpall -c -U your-db-user > dump_$(date +%Y-%m-%d_%H_%M_%S).sql
+docker exec -t $db_id pg_dumpall -c -U odoo > dump_$(date +%Y-%m-%d_%H_%M_%S).sql
 
 
 # Restore backup
